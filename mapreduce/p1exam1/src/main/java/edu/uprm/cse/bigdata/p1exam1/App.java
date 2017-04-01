@@ -23,18 +23,18 @@ public class App
             FileInputFormat.addInputPath(job, new Path(args[0]));
             FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
-            job.setMapperClass(edu.uprm.cse.bigdata.p1exam1.Mapper.class);
-            job.setReducerClass(edu.uprm.cse.bigdata.p1exam1.Reducer.class);
+            job.setMapperClass(edu.uprm.cse.bigdata.p1exam1.TaskMapper.class);
+            job.setReducerClass(edu.uprm.cse.bigdata.p1exam1.TaskReducer.class);
 
             job.setOutputKeyClass(Text.class);
             job.setOutputValueClass(Text.class);
-
-            return job.waitForCompletion(true);
+            job.waitForCompletion(true);
+            System.exit(0);
         }
         catch(Exception ex)
         {
             System.out.println(ex.getMessage());
-            return false;
+            System.exit(0);
         }
     }
 }
