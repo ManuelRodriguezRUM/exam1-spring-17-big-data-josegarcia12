@@ -15,7 +15,7 @@ LOAD DATA LOCAL INPATH 'escuelasPR.csv' OVERWRITE INTO TABLE escuela;
 
 create table estudiantes
 (region String,distrito String,
-ciudad String,IDescuela int, nombre String,
+IDescuela int, nombre String,
 nivel String, sex String, IDestudiante  int)
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
